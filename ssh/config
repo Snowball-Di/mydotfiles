@@ -1,0 +1,5 @@
+Host dy
+   User dy
+   HostName 108.61.216.251
+   IdentityFile ~/.ssh/id_ed25519
+   LocalForward 9999 localhost:8888
