@@ -2,26 +2,12 @@
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
-source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# use 256 color terminal
-export TERM=xterm-256color
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-POWERLEVEL9K_MODE='nerdfont-complete'
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
+#ZSH THEME
+ZSH_THEME="powerlevel9k/powerlevel9k"
+source $HOME/.config/base16-shell/base16-shell.plugin.zsh
+base16_tomorrow-night-eighties
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -76,10 +62,14 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z extract)
+plugins=(git z extract zsh-autosuggestions zsh-syntax-highlighting) 
+export TERM=xterm-256color
+#---------------------------------------------------------
+#theme configuration
+#---------------------------------------------------------
 
-#zsh theme by Sudhindra
-
+POWERLEVEL9K_MODE='nerdfont-complete'
+source $ZSH/oh-my-zsh.sh
 POWERLEVEL9K_CONTEXT_TEMPLATE='%n'
 POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='white'
 POWERLEVEL9K_BATTERY_CHARGING='yellow'
@@ -117,14 +107,6 @@ POWERLEVEL9K_HOME_SUB_ICON=''
 POWERLEVEL9K_FOLDER_ICON=''
 POWERLEVEL9K_STATUS_VERBOSE=true
 POWERLEVEL9K_STATUS_CROSS=true
-
-source $ZSH/oh-my-zsh.sh
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -150,3 +132,10 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+# Base16 Shell
+#BASE16_SHELL_PATH="$HOME/.config/base16-shell"
+#[ -n "$PS1" ] && \
+  #[ -s "$BASE16_SHELL_PATH/profile_helper.sh" ] && \
+    #source "$BASE16_SHELL_PATH/profile_helper.sh"
