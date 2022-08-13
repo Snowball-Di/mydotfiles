@@ -62,6 +62,7 @@ Plugin 'derekwyatt/vim-fswitch'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
+Plugin 'neomake/neomake'
 
 call vundle#end()
 filetype plugin indent on
